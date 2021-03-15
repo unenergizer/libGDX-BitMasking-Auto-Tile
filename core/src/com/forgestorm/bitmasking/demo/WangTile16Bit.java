@@ -7,7 +7,7 @@ import java.util.HashMap;
 public class WangTile16Bit extends AbstractWangTile {
 
     public WangTile16Bit(MapRenderer mapRenderer) {
-        super(mapRenderer, "dirt-grass-48", new HashMap<Integer, Vector2>() {
+        super(mapRenderer, "dirt-grass-16", new HashMap<Integer, Vector2>() {
             {
                 put(0, new Vector2(48, 48));
                 put(2, new Vector2(48, 0));
