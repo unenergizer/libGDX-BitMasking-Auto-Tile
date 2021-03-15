@@ -1,0 +1,20 @@
+
+tiles.png
+size: 256, 128
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+dirt-grass-16
+  rotate: false
+  xy: 164, 18
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+dirt-grass-48
+  rotate: false
+  xy: 2, 2
+  size: 160, 80
+  orig: 160, 80
+  offset: 0, 0
+  index: -1

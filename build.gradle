@@ -1,0 +1,51 @@
+buildscript {
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        google()
+    }
+    dependencies {
+    }
+}
+
+allprojects {
+    apply plugin: "eclipse"
+
+    version = '1.0'
+    ext {
+        appName = "libgdx-bitmasking-auto-tile"
+        gdxVersion = '1.9.14'
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        google()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        maven { url "https://oss.sonatype.org/content/repositories/releases/" }
+    }
+}
+
+project(":desktop") {
+    apply plugin: "java-library"
+
+    dependencies {
+        implementation project(":core")
+        api "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
+        api "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+        
+    }
+}
+
+project(":core") {
+    apply plugin: "java-library"
+
+    dependencies {
+        api "com.badlogicgames.gdx:gdx:$gdxVersion"
+        compileOnly 'org.projectlombok:lombok:1.18.16'
+        annotationProcessor 'org.projectlombok:lombok:1.18.16'
+    }
+}
